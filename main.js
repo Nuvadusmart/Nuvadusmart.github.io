@@ -1,8 +1,8 @@
 const canvas = document.getElementById('canvas1');
 ctx = canvas.getContext('2d')
 const DEBUG = document.getElementById('debug');
-canvas.width = document.documentElement.clientWidth-100
-canvas.height = document.documentElement.clientHeight -100
+canvas.width = document.documentElement.clientWidth-200
+canvas.height = document.documentElement.clientHeight -200
 
 let spacePressed = false;
 let enterPressed = false;
