@@ -14,8 +14,8 @@ class Bird{
         this.image = new Image();
         this.image.src = imgsrc
         this.scale = scale
-        this.width = (this.image.width/this.maxFramesX) * this.scale//20;
-        this.height = (this.image.height/this.maxFramesY) * this.scale//20;
+        this.width = 20//(this.image.width/this.maxFramesX) * this.scale//20;
+        this.height = 20//(this.image.height/this.maxFramesY) * this.scale//20;
         this.offsetx = 15
         this.offsety = 20
 
