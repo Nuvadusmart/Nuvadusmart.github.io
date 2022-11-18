@@ -22,6 +22,7 @@ class Bird{
     }
     update(){
         bird.draw2();
+        bird.draw()
         this.framesElapsed++
         if(this.framesElapsed % this.framesHold === 0){
     
