@@ -47,7 +47,7 @@ animate();
 window.addEventListener('keydown',function(e){
     console.log(e.code);
     if(e.code ==='Space') spacePressed = true;
-    if(e.code ==='Enter') this.location.reload()
+    if(e.code ==='Enter') this.location.reload(true)
     
 
 })
