@@ -31,9 +31,11 @@ function handleObstacles(){
     }
     for (let i = 0; i < obstaclesArray.length;i++){
         obstaclesArray[i].update();
+        if (obstaclesArray[i].x < 0) obstaclesArray.pop(obstaclesArray[i]);
     }
-    if (obstaclesArray.length > 20){
-        obstaclesArray.pop(obstaclesArray[0]); //remove from end of array. far left.
+    //if (obstaclesArray.length > 20){
+   // if  
+    //obstaclesArray.pop(obstaclesArray[0]); //remove from end of array. far left.
 
-    }
+    //}
 }
