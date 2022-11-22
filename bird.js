@@ -77,7 +77,7 @@ class Bird{
             
     }
     flap(){
-        this.vy -=.6;
+        this.vy -=.4;
 
     }
 }
