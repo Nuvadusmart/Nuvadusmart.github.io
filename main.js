@@ -36,7 +36,9 @@ function animate(){
     frame++;
     let debugoutput = 'frame:'+frame+'<br>'+
                       'currentframeX:'+bird.framesCurrentX+'<br>'+
-                      'currentframeY:'+bird.framesCurrentY+'<br>'  
+                      'currentframeY:'+bird.framesCurrentY+'<br>'+
+                      'gamespeed:'+gamespeed+'<br>'+
+                      'birdsize: x:'+bird.width +' y: '+bird.height
     DEBUG.innerHTML = debugoutput;
    
 }
