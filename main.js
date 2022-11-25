@@ -12,7 +12,7 @@ let frame = 0;
 let framesElapsed = 0;
 
 let score = 0;
-let gamespeed = 4;
+let gamespeed = 8;
 
 
 
