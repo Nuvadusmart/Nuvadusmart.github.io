@@ -17,6 +17,8 @@ let gamespeed = 8;
 
 
 function animate(){
+    let lastupdate = new Date();
+    
     ctx.clearRect(0,0,canvas.width,canvas.height)
     ctx.fillStyle = 'black'
     ctx.fillRect(0,0,canvas.width,canvas.height);
