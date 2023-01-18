@@ -32,7 +32,7 @@ function animate(){
     handleObstacles();
     showScore();
     if(handleCollisions()) return; //jump out of animloop;
-    requestAnimationFrame(animate);
+    setInterval(requestAnimationFrame(animate) , 1000/60)
     angle += 0.12; //wobblespeed;
     hue +=1;
     frame++;
