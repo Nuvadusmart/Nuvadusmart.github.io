@@ -8,10 +8,11 @@ canvas.height = document.documentElement.clientHeight -200
 const info = document.getElementById('infoscreen');
 const yes = document.getElementById('yesbtn');
 
+/*
 info.toggleClass('open');
 yes.addEventListener('click',function(){
     info.toggleClass('open')
-})
+})*/
 
 
 let spacePressed = false;
