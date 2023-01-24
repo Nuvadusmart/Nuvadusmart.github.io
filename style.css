@@ -9,12 +9,19 @@
 }
 
 #infoscreen{
+    display:none;
     position: absolute;
     top:50%;
     left:50%;
+    width:400px;
+    height:300px;
     transform: translate(-50%,-50%); /*same as self.width/2*/
     box-shadow: 0px 0px 5px 16px rgba(0,0,0,0.59);
-    content:"just a test"
+    z-index: 2000;
+   
+}
+#infoscreen.open{
+    display:block;
 }
 
 

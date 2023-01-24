@@ -1,8 +1,18 @@
 const canvas = document.getElementById('canvas1');
+
 ctx = canvas.getContext('2d')
 const DEBUG = document.getElementById('debug');
 canvas.width = document.documentElement.clientWidth-200
 canvas.height = document.documentElement.clientHeight -200
+
+const info = document.getElementById('infoscreen');
+const yes = document.getElementById('yesbtn');
+
+info.toggleClass('open');
+yes.addEventListener('click',function(){
+    info.toggleClass('open')
+})
+
 
 let spacePressed = false;
 let enterPressed = false;
