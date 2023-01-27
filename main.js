@@ -25,11 +25,11 @@ let framesElapsed = 0;
 let score = 0;
 let gamespeed = 4;
 
+let lastupdate = performance.now();
 
-
-function animate(){
-    let lastupdate = new Date();
+function animate(timestamp){
     
+    let timestamp = performance.now();
     ctx.clearRect(0,0,canvas.width,canvas.height)
     ctx.fillStyle = 'black'
     ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -43,7 +43,11 @@ function animate(){
     handleObstacles();
     showScore();
     if(handleCollisions()) return; //jump out of animloop;
-    setInterval(requestAnimationFrame(animate) , 1000/60)
+    if(timestamp - lastupdate >= 1000/60){
+    requestAnimationFrame(animate)
+
+    lastupdate = timestamp;
+    
     angle += 0.12; //wobblespeed;
     hue +=1;
     frame++;
@@ -53,7 +57,8 @@ function animate(){
                       'gamespeed:'+gamespeed+'<br>'+
                       'birdsize: x:'+bird.width +' y: '+bird.height
     DEBUG.innerHTML = debugoutput;
-   
+    }
+    requestAnimationFrame(animate)
 }
 
 animate();
