@@ -25,11 +25,17 @@ let framesElapsed = 0;
 let score = 0;
 let gamespeed = 4;
 
-let lastupdate = performance.now();
+let lastFrameTimestamp = performance.now();
+let accumulatedTime = 0;
+const TARGET_FPS = 60;
+const FRAME_DURATION = 1000 / TARGET_FPS;
 
 function animate(timestamp){
+    let timestamp = performance.now();
+    accumulatedTime += timestamp - lastFrameTimestamp;
+    lastFrameTimestamp = timestamp;
+    if (accumulatedTime >= FRAME_DURATION) {
     
-    timestamp = performance.now();
     ctx.clearRect(0,0,canvas.width,canvas.height)
     ctx.fillStyle = 'black'
     ctx.fillRect(0,0,canvas.width,canvas.height);
@@ -43,10 +49,11 @@ function animate(timestamp){
     handleObstacles();
     showScore();
     if(handleCollisions()) return; //jump out of animloop;
-    if(timestamp - lastupdate >= 1000/60){
+    accumulatedTime -= FRAME_DURATION;
+}
     requestAnimationFrame(animate)
 
-    lastupdate = timestamp;
+   
     
     angle += 0.12; //wobblespeed;
     hue +=1;
@@ -57,8 +64,8 @@ function animate(timestamp){
                       'gamespeed:'+gamespeed+'<br>'+
                       'birdsize: x:'+bird.width +' y: '+bird.height
     DEBUG.innerHTML = debugoutput;
-    }
-    requestAnimationFrame(animate)
+    
+    
 }
 
 animate();
