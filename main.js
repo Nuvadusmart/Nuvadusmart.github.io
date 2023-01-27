@@ -30,7 +30,7 @@ let accumulatedTime = 0;
 const TARGET_FPS = 60;
 const FRAME_DURATION = 1000 / TARGET_FPS;
 
-function animate(timestamp){
+function animate(){
     let timestamp = performance.now();
     accumulatedTime += timestamp - lastFrameTimestamp;
     lastFrameTimestamp = timestamp;
