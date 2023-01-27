@@ -30,7 +30,10 @@ let accumulatedTime = 0;
 const TARGET_FPS = 60;
 const FRAME_DURATION = 1000 / TARGET_FPS;
 let myaudio = new Audio('song.mp3')
-myaudio.play();
+myaudio.loop = true;
+myaudio.oncanplaythrough = function() {
+    myaudio.play();
+  }
 
 function animate(){
     let timestamp = performance.now();
