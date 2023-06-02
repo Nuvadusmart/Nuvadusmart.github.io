@@ -24,7 +24,7 @@ let framesElapsed = 0;
 
 let score = 0;
 let gamespeed = 4;
-
+let previous = 0;
 let lastFrameTimestamp = performance.now();
 let accumulatedTime = 0;
 const TARGET_FPS = 60;
@@ -56,7 +56,7 @@ function animate(){
     showScore();
     if(handleCollisions()) return; //jump out of animloop;
     accumulatedTime -= FRAME_DURATION;
-        let previous = score;
+    previous = score;
 }
     requestAnimationFrame(animate)
 
