@@ -48,7 +48,7 @@ function animate(){
     bird.update();
     handleCollisions();
     
-    
+    if(score % 50 === 0)gamespeed +=1;
     
     handleParticles();
     handleObstacles();
