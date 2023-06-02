@@ -26,7 +26,8 @@ class Obstacle {
 }
 
 function handleObstacles(speed){
-    if (frame % (34-speed*2) ===0){
+    
+    if (frame % (30-speed) ===0){
         obstaclesArray.unshift(new Obstacle);
     }
     for (let i = 0; i < obstaclesArray.length;i++){
