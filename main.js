@@ -56,7 +56,7 @@ function animate(){
         }
     
     handleParticles();
-    handleObstacles();
+    handleObstacles(gamespeed);
     showScore();
     if(handleCollisions()) return; //jump out of animloop;
     accumulatedTime -= FRAME_DURATION;
