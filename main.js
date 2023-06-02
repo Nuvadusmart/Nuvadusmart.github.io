@@ -49,14 +49,18 @@ function animate(){
     handleCollisions();
     
 
-        if(previous < score && score % 10 === 0) gamespeed += 1;
+        if(previous < score && score % 10 === 0){
+             gamespeed += 1;
+             console.log(previous);
+             previous = score;
+        }
     
     handleParticles();
     handleObstacles();
     showScore();
     if(handleCollisions()) return; //jump out of animloop;
     accumulatedTime -= FRAME_DURATION;
-    previous = score;
+    
 }
     requestAnimationFrame(animate)
 
