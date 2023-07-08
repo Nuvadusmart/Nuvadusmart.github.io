@@ -32,6 +32,7 @@ body{
 .infoscreen.open{
     display:flex;
     margin:auto;
+    flex-direction: row;
     justify-items: center;
     align-items: center;
 }

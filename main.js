@@ -7,7 +7,8 @@ canvas.height = document.documentElement.clientHeight -200
 
 const info = document.getElementById('infoscreen');
 const yesbtn = document.getElementById('yesbtn');
-
+let highscore = document.getElementById('highscore');
+highscore.innerHTML = localStorage.getItem('myscore'); //set score to whatever is set in localstorage, should be the highest
 /*
 info.toggleClass('open');
 yes.addEventListener('click',function(){
@@ -144,7 +145,10 @@ function handleCollisions(){
                 ctx.fillStyle = 'white';
                 ctx.fillText('Game Over, your score is ' + score, 160, canvas.height/2 - 12.5)
                 let previous = localStorage.getItem('myscore')
-                if(previous < score) {localStorage.setItem('myscore',score)}
+                if(previous < score) {
+                    localStorage.setItem('myscore',score)
+                    highscore.innerHTML = score;
+                }else{highscore.innerHTML = previous}
                 info.classList.add('open');
                 return true;
 
