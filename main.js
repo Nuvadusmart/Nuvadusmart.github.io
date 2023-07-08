@@ -14,7 +14,7 @@ yes.addEventListener('click',function(){
     info.toggleClass('open')
 })*/
 
-
+var bird;
 let spacePressed = false;
 let enterPressed = false;
 let angle = 0;
@@ -83,7 +83,7 @@ function animate(){
 yesbtn.addEventListener('click',function(){
 info.classList.remove('open');
 
-var bird = new Bird('bird5x4.png',5,3,0.75);
+bird = new Bird('bird5x4.png',5,3,0.75);
     animate();
 });
 
