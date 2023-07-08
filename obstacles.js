@@ -43,5 +43,7 @@ function handleObstacles(speed){
 }
 
 function clearObstacles(){
-    obstaclesArray = [];
+    for(let i=0;1< obstaclesArray.length;i++){
+        obstaclesArray.pop(obstaclesArray[i]);
+    }
 }
