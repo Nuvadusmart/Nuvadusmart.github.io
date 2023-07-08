@@ -91,6 +91,24 @@ window.addEventListener('keydown',function(e){
 
 })
 
+window.addEventListener('touchstart',function(e){
+    console.log(e)
+   if(e.touches.length >1)
+   {this.location.reload(true)}
+   else{
+    spacePressed = true;
+   }
+})
+
+window.addEventListener('touchend',function(e){
+    console.log(e)
+   if(e.touches.length >1)
+   {this.location.reload(true)}
+   else{
+    spacePressed = false;
+   }
+})
+
 window.addEventListener('keyup',function(e){
     //console.log(e.code);
     if(e.code ==='Space') spacePressed = false;
