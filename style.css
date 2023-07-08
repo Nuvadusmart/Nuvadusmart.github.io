@@ -26,10 +26,14 @@ body{
     box-shadow: 0px 0px 5px 16px rgba(0,0,0,0.59);
     border-radius:10px;
     z-index: 2000;
+
    
 }
 .infoscreen.open{
-    display:block;
+    display:flex;
+    margin:auto;
+    justify-items: center;
+    align-items: center;
 }
 
 

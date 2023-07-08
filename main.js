@@ -143,6 +143,8 @@ function handleCollisions(){
                 ctx.font = "25px Georgia";
                 ctx.fillStyle = 'white';
                 ctx.fillText('Game Over, your score is ' + score, 160, canvas.height/2 - 12.5)
+                let previous = localStorage.getItem('myscore')
+                if(previous < score) {localStorage.setItem('myscore',score)}
                 info.classList.add('open');
                 return true;
 
