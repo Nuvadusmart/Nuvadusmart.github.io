@@ -23,6 +23,7 @@ class Obstacle {
         }
         this.draw();
     }
+
 }
 
 function handleObstacles(speed){
@@ -39,4 +40,8 @@ function handleObstacles(speed){
     //obstaclesArray.pop(obstaclesArray[0]); //remove from end of array. far left.
 
     //}
+}
+
+function clearObstacles(){
+    obstaclesArray = [];
 }

@@ -82,8 +82,9 @@ function animate(){
 //create eventlistener on button to start game
 yesbtn.addEventListener('click',function(){
 info.classList.remove('open');
-
+clearObstacles();
 bird = new Bird('bird5x4.png',5,3,0.75);
+
     animate();
 });
 
