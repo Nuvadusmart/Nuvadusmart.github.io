@@ -80,5 +80,6 @@ class Bird{
         this.vy -=.4;
 
     }
+    
 }
-const bird = new Bird('bird5x4.png',5,3,0.75);
+//const bird = new Bird('bird5x4.png',5,3,0.75);
