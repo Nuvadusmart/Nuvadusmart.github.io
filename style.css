@@ -14,7 +14,7 @@ body{
     height:100%;
 }
 
-#infoscreen{
+.infoscreen{
     display:none;
     position: absolute;
     background-color: #ccc;
@@ -28,7 +28,7 @@ body{
     z-index: 2000;
    
 }
-#infoscreen.open{
+.infoscreen.open{
     display:block;
 }
 
