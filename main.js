@@ -6,7 +6,7 @@ canvas.width = document.documentElement.clientWidth-200
 canvas.height = document.documentElement.clientHeight -200
 
 const info = document.getElementById('infoscreen');
-const yes = document.getElementById('yesbtn');
+const yesbtn = document.getElementById('yesbtn');
 
 /*
 info.toggleClass('open');
@@ -79,7 +79,12 @@ function animate(){
     
 }
 
-animate();
+//create eventlistener on button to start game
+yesbtn.addEventListener('click',function(){
+info.classList.remove('open');
+    animate();
+});
+
 
 
 
@@ -135,7 +140,9 @@ function handleCollisions(){
                 ctx.font = "25px Georgia";
                 ctx.fillStyle = 'white';
                 ctx.fillText('Game Over, your score is ' + score, 160, canvas.height/2 - 12.5)
+                info.classList.add('open');
                 return true;
+
             }
     }
 }
