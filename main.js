@@ -36,6 +36,8 @@ myaudio.oncanplaythrough = function() {
     myaudio.play();
   }
 
+localStorage.setItem('myscore',0)
+
 function animate(){
     let timestamp = performance.now();
     accumulatedTime += timestamp - lastFrameTimestamp;
@@ -147,6 +149,7 @@ function handleCollisions(){
                 let previous = localStorage.getItem('myscore')
                 if(previous < score) {
                     localStorage.setItem('myscore',score)
+                    
                     highscore.innerHTML = score;
                 }else{highscore.innerHTML = previous}
                 info.classList.add('open');
