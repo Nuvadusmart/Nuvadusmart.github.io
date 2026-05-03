@@ -1,0 +1,49 @@
+.builder-calc { padding: 20px; color: #fff }
+.builder-calc h3 { margin-bottom: 16px; font-weight: 400; color: #fff }
+.builder-calc canvas { border-radius: 8px; margin-top: 10px }
+
+.bc-inputs { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px }
+.bc-inputs label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px }
+.bc-inputs input { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 6px; font-size: 14px; margin-top: 4px }
+.bc-inputs input:focus { outline: none; border-color: #667eea }
+
+.bc-calc-btn { padding: 10px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; margin-bottom: 20px }
+.bc-calc-btn:hover { opacity: 0.9; transform: scale(1.02) }
+.bc-results h4 { color: #fff; margin-bottom: 12px; font-weight: 500 }
+
+.bc-plan-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px }
+.bc-plan-col { min-width: 0 }
+.bc-table-wrap { overflow-x: auto; border-radius: 8px }
+
+.bc-board { background: rgba(255,255,255,0.06); padding: 14px 18px; border-radius: 10px; margin-bottom: 16px }
+.bc-board-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; color: rgba(255,255,255,0.9); font-size: 14px }
+.bc-remaining { background: rgba(255,255,255,0.1); padding: 4px 10px; border-radius: 6px; font-size: 13px; color: #ffc107 }
+.bc-board-bar { display: flex; height: 32px; border-radius: 6px; overflow: hidden; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1) }
+.bc-cut-segment { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #667eea, #764ba2); color: white; font-size: 12px; font-weight: 500; transition: opacity 0.2s }
+.bc-cut-segment:hover { opacity: 0.85 }
+.bc-waste-segment { display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); color: #ffc107; font-size: 11px; transition: opacity 0.2s }
+
+.bc-note { background: rgba(255,193,7,0.1); border-left: 3px solid #ffc107; padding: 8px 14px; border-radius: 6px; margin-top: 10px; font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.5 }
+.bc-summary { background: rgba(255,255,255,0.06); padding: 14px 18px; border-radius: 10px; margin-bottom: 20px; display: grid; gap: 8px }
+.bc-summary p { color: rgba(255,255,255,0.9); font-size: 14px; line-height: 1.6 }
+
+.bc-table { width: 100%; border-collapse: collapse; margin-bottom: 20px }
+.bc-table th { background: rgba(102,126,234,0.2); color: #fff; padding: 10px 12px; text-align: left; font-size: 13px }
+.bc-table td { padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); color: rgba(255,255,255,0.9); font-size: 13px }
+.bc-table tr:hover { background: rgba(255,255,255,0.04) }
+
+.bc-layout-visual { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; margin-bottom: 20px }
+.bc-layout-scale { display: flex; justify-content: space-between; color: rgba(255,255,255,0.75); font-size: 12px; margin-bottom: 10px }
+.bc-layout-row { display: grid; grid-template-columns: 64px 1fr; gap: 10px; align-items: center; margin-bottom: 8px }
+.bc-layout-row-label { color: rgba(255,255,255,0.8); font-size: 12px }
+.bc-layout-track { position: relative; height: 34px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); background: linear-gradient(to right, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); overflow: hidden }
+.bc-joist-zone { position: absolute; top: 0; bottom: 0; background: rgba(255,209,102,0.14); border-left: 1px dashed rgba(255,209,102,0.45); border-right: 1px dashed rgba(255,209,102,0.45); z-index: 1 }
+.bc-joist-line { position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.35); z-index: 2 }
+.bc-seam-line { position: absolute; top: 0; bottom: 0; width: 2px; background: #ffd166; box-shadow: 0 0 6px rgba(255,209,102,0.8); z-index: 4 }
+.bc-layout-segment { position: absolute; top: 3px; bottom: 3px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 11px; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.35); border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); z-index: 3; overflow: hidden; white-space: nowrap }
+.bc-layout-segment.new { background: linear-gradient(135deg, #2f80ed, #56ccf2) }
+.bc-layout-segment.offcut { background: linear-gradient(135deg, #8360c3, #2ebf91) }
+
+@media (max-width: 1100px) {
+  .bc-plan-layout { grid-template-columns: 1fr }
+}

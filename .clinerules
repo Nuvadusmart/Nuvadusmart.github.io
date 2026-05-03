@@ -1,0 +1,47 @@
+# Cline Workspace Rules
+
+## Scope
+These rules apply to all tasks in this workspace.
+
+## Mandatory Workflow
+1. Read agent-wiki/README.md before planning or editing.
+2. Read relevant wiki subpages for the area you are changing.
+3. Perform requested work.
+4. Update wiki pages after every change (code, structure, behavior, decisions).
+5. Add a concise entry in agent-wiki/changelog.md.
+
+If wiki info is missing, add it before finishing.
+
+## File Structure and Size
+- Maximum file length: 200 lines.
+- If a file would exceed 200 lines, split it into smaller modules.
+- Keep one primary responsibility per file.
+- Keep components and logic in separate files.
+
+## Component and Logic Separation
+- Presentation components: rendering and event wiring only.
+- Logic modules: calculations, state transitions, data transforms.
+- Avoid embedding heavy business logic directly in JSX components.
+- Reuse logic via hooks, services, or utils.
+
+## Editing Standards
+- Make minimal, targeted changes.
+- Preserve behavior unless explicitly asked to change it.
+- Keep naming consistent with existing project conventions.
+- Prefer small, composable functions.
+
+## Wiki Standards
+- Agent wiki is the source of truth for architecture and decisions.
+- Required wiki updates after changes:
+  - agent-wiki/components.md for new or changed components.
+  - agent-wiki/architecture.md for structural changes.
+  - agent-wiki/decisions.md for non-trivial tradeoffs.
+  - agent-wiki/changelog.md for every completed task.
+- Keep entries concise and factual.
+- Include what changed, why, and impact.
+
+## Completion Checklist
+- Confirm all edited files are 200 lines or fewer.
+- Confirm component and logic separation is respected.
+- Confirm wiki pages are updated.
+- Confirm changelog entry exists.

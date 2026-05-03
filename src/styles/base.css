@@ -1,0 +1,66 @@
+* { margin: 0; padding: 0; box-sizing: border-box }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+.os {
+  width: 100vw;
+  height: calc(100vh - 48px);
+  overflow: hidden;
+  transition: background 0.5s ease;
+  background: #667eea;
+  position: fixed;
+  isolation: isolate;
+}
+
+@keyframes orbFloatA {
+  0% { transform: translate(0, 0) scale(1) }
+  25% { transform: translate(10vw, 5vh) scale(1.1) }
+  50% { transform: translate(-4vw, 12vh) scale(0.95) }
+  75% { transform: translate(7vw, -6vh) scale(1.08) }
+  100% { transform: translate(0, 0) scale(1) }
+}
+
+@keyframes orbFloatB {
+  0% { transform: translate(0, 0) scale(1) }
+  20% { transform: translate(-7vw, 8vh) scale(0.92) }
+  50% { transform: translate(11vw, -4vh) scale(1.15) }
+  80% { transform: translate(-5vw, -8vh) scale(1.02) }
+  100% { transform: translate(0, 0) scale(1) }
+}
+
+@keyframes orbFloatC {
+  0% { transform: translate(0, 0) scale(1) }
+  30% { transform: translate(6vw, -10vh) scale(1.1) }
+  60% { transform: translate(-8vw, 7vh) scale(0.94) }
+  100% { transform: translate(0, 0) scale(1) }
+}
+
+.bg-effects { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: -1 }
+.bg-orbs { position: absolute; inset: -8vh -8vw }
+.bg-orb { position: absolute; border-radius: 50%; filter: blur(2px); opacity: 0.65 }
+
+.orb-1 { width: 28vw; height: 28vw; min-width: 220px; min-height: 220px; left: 6vw; top: 8vh; background: radial-gradient(circle at 30% 30%, rgba(130,198,255,0.75), rgba(21,84,176,0.05) 70%); animation: orbFloatA 21s ease-in-out infinite }
+.orb-2 { width: 22vw; height: 22vw; min-width: 180px; min-height: 180px; right: 12vw; top: 10vh; background: radial-gradient(circle at 35% 25%, rgba(230,140,255,0.68), rgba(82,12,122,0.04) 72%); animation: orbFloatB 18s ease-in-out infinite }
+.orb-3 { width: 30vw; height: 30vw; min-width: 240px; min-height: 240px; left: 30vw; bottom: -6vh; background: radial-gradient(circle at 40% 30%, rgba(113,255,218,0.6), rgba(8,114,88,0.02) 72%); animation: orbFloatC 25s ease-in-out infinite }
+.orb-4 { width: 20vw; height: 20vw; min-width: 160px; min-height: 160px; right: -4vw; bottom: 16vh; background: radial-gradient(circle at 30% 35%, rgba(255,212,133,0.6), rgba(161,96,18,0.03) 72%); animation: orbFloatA 19s ease-in-out infinite reverse }
+.orb-5 { width: 18vw; height: 18vw; min-width: 140px; min-height: 140px; left: -5vw; bottom: 8vh; background: radial-gradient(circle at 30% 35%, rgba(186,151,255,0.52), rgba(63,24,122,0.03) 72%); animation: orbFloatB 24s ease-in-out infinite reverse }
+
+.bg-haze { position: absolute; inset: 0; backdrop-filter: blur(10px) saturate(110%); background: linear-gradient(180deg, rgba(9,16,31,0.2), rgba(8,12,24,0.45)) }
+.bg-matrix-canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.72 }
+.matrix-haze { backdrop-filter: blur(6px) saturate(105%); background: linear-gradient(180deg, rgba(2,12,8,0.22), rgba(4,14,17,0.48)) }
+
+::-webkit-scrollbar { width: 6px }
+::-webkit-scrollbar-track { background: transparent }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 3px }

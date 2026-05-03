@@ -1,0 +1,47 @@
+.desktop { width: 100%; height: 100%; padding: 20px; display: flex; flex-direction: column; flex-wrap: wrap; align-content: flex-start; gap: 10px }
+.desktop-icons { display: flex; flex-wrap: wrap; gap: 15px; align-content: flex-start }
+
+.desktop-icon { display: flex; flex-direction: column; align-items: center; padding: 12px; border-radius: 12px; cursor: pointer; transition: background 0.2s ease; min-width: 80px }
+.desktop-icon:hover { background: rgba(255,255,255,0.1) }
+.icon-emoji { font-size: 40px; margin-bottom: 6px; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)) }
+.icon-label { color: white; font-size: 12px; text-align: center; text-shadow: 0 1px 3px rgba(0,0,0,0.5); word-break: break-word }
+
+.window { position: absolute; top: 0; left: 0; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1); overflow: hidden; transition: opacity 0.15s ease; z-index: 10 }
+.window.active { box-shadow: 0 25px 70px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.15); z-index: 20 }
+
+.window-header { display: flex; align-items: center; padding: 10px 14px; background: linear-gradient(to bottom, rgba(30,30,50,0.95), rgba(20,20,35,0.98)); border-bottom: 1px solid rgba(255,255,255,0.06); cursor: move; gap: 10px }
+.window-icon { font-size: 16px }
+.window-title { color: rgba(255,255,255,0.8); font-size: 13px; font-weight: 500; flex: 1 }
+.window-controls { display: flex; gap: 8px }
+
+.window-controls button { width: 26px; height: 26px; border-radius: 50%; border: none; cursor: pointer; font-size: 13px; display: flex; align-items: center; justify-content: center; transition: transform 0.1s ease }
+.btn-minimize { background: #fdd947; color: rgba(0,0,0,0.6) }
+.btn-maximize { background: #4cd859; color: rgba(0,0,0,0.6) }
+.btn-close { background: #ff5f56; color: rgba(255,255,255,0.7) }
+
+.window-content { height: calc(100% - 48px); overflow-y: auto; background: rgba(25,25,45,0.95) }
+.resize-handle { position: absolute }
+.resize-n { top: 0; left: 10px; right: 10px; height: 6px; cursor: n-resize }
+.resize-s { bottom: 0; left: 10px; right: 10px; height: 6px; cursor: s-resize }
+.resize-e { right: 0; top: 10px; bottom: 10px; width: 6px; cursor: e-resize }
+.resize-w { left: 0; top: 10px; bottom: 10px; width: 6px; cursor: w-resize }
+
+.taskbar { height: 48px; background: linear-gradient(to bottom, rgba(25,25,45,0.9), rgba(15,15,30,0.95)); backdrop-filter: blur(20px); display: flex; align-items: center; padding: 0 12px; border-top: 1px solid rgba(255,255,255,0.08); position: fixed; bottom: 0; left: 0; right: 0 }
+.taskbar-left { display: flex; align-items: center; gap: 8px; flex: 1 }
+.start-button { background: none; border: none; font-size: 22px; cursor: pointer; padding: 6px 10px; border-radius: 8px; transition: background 0.2s }
+.start-button:hover { background: rgba(255,255,255,0.1) }
+.start-button.active { background: rgba(255,255,255,0.16) }
+
+.start-menu-container { position: relative }
+.start-menu { position: absolute; left: 0; bottom: 44px; width: 240px; padding: 10px; border-radius: 12px; background: linear-gradient(to bottom, rgba(25,25,45,0.98), rgba(15,15,30,0.98)); border: 1px solid rgba(255,255,255,0.12); box-shadow: 0 20px 40px rgba(0,0,0,0.45); backdrop-filter: blur(16px); z-index: 60 }
+.start-menu-title { color: rgba(255,255,255,0.7); font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; padding: 0 6px }
+.start-menu-list { display: flex; flex-direction: column; gap: 4px }
+.start-menu-item { display: flex; align-items: center; gap: 8px; width: 100%; border: none; border-radius: 8px; background: transparent; color: white; padding: 8px 10px; font-size: 14px; cursor: pointer; text-align: left }
+.start-menu-item:hover { background: rgba(255,255,255,0.12) }
+
+.taskbar-apps { display: flex; gap: 4px; flex: 1; overflow-x: auto }
+.taskbar-item { display: flex; align-items: center; gap: 6px; padding: 6px 12px; background: rgba(255,255,255,0.05); border: none; color: white; border-radius: 8px; cursor: pointer; font-size: 13px; transition: all 0.2s ease; white-space: nowrap }
+.taskbar-item:hover { background: rgba(255,255,255,0.1) }
+.taskbar-item.active { background: rgba(255,255,255,0.15); box-shadow: inset 0 -2px rgba(102,126,234,0.5) }
+.taskbar-right { display: flex; align-items: center; color: white; font-size: 13px; padding-left: 12px }
+.clock { background: rgba(255,255,255,0.08); padding: 6px 12px; border-radius: 8px }
