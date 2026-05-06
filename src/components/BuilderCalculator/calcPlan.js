@@ -1,4 +1,8 @@
 const round1 = (n) => Math.round(n * 10) / 10
+const FLOAT_EPS = 1e-9
+
+const safeFloorDiv = (numerator, denominator) => Math.floor((numerator + FLOAT_EPS) / denominator)
+const safeCeilDiv = (numerator, denominator) => Math.ceil((numerator - FLOAT_EPS) / denominator)
 
 const parseOrDefault = (value, fallback) => {
   const normalized = typeof value === 'string' ? value.replace(',', '.') : value
@@ -75,19 +79,22 @@ export const buildPlan = (inputs) => {
   if (joistWidth - joistSpacing > 0.0001) return { error: 'Joist width must be less than or equal to joist spacing.' }
   if (minJoistBearing - joistWidth / 2 > 0.0001) return { error: 'Minimum bearing cannot exceed half the joist width.' }
 
-  const innerSpan = areaWidth - lipLeft - lipRight
-  const fullJoists = Math.floor(innerSpan / joistSpacing)
-  const lastInnerSpan = round1(innerSpan - fullJoists * joistSpacing)
-  const pattern = [round1(lipLeft), ...Array(fullJoists).fill(round1(joistSpacing))]
-  if (lastInnerSpan > 0.0001) pattern.push(lastInnerSpan)
-  pattern.push(round1(lipRight))
-
   const seamPositions = []
-  let pos = lipLeft
-  for (let i = 0; i < fullJoists; i++) {
-    pos += joistSpacing
-    if (pos < areaWidth - lipRight - 0.0001) seamPositions.push(round1(pos))
+  // Spacing is interpreted from the deck edge to joist face, so seam support center
+  // sits half a joist width further inside the board field.
+  const firstSeamCenter = lipLeft + joistSpacing + joistWidth / 2
+  const lastAllowedSeamCenter = areaWidth - lipRight + joistWidth / 2
+  for (let pos = firstSeamCenter; pos < lastAllowedSeamCenter - 0.0001; pos += joistSpacing) {
+    seamPositions.push(round1(pos))
   }
+
+  const pattern = []
+  let spanStart = 0
+  for (const seam of seamPositions) {
+    pattern.push(round1(seam - spanStart))
+    spanStart = seam
+  }
+  pattern.push(round1(areaWidth - spanStart))
   const seamBuffer = round1(joistWidth / 2)
   const supportZones = seamPositions.map((center) => ({
     center,
@@ -102,7 +109,7 @@ export const buildPlan = (inputs) => {
   }))
 
   const usableDepth = areaDepth - lipBack
-  const rowsNeeded = Math.ceil(usableDepth / materialDepth)
+  const rowsNeeded = safeCeilDiv(usableDepth, materialDepth)
   if (rowsNeeded <= 0) return { error: 'No rows needed with these depth values.' }
 
   const stockPool = []
