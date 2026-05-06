@@ -273,3 +273,20 @@ Fix calculator display to show full expression before equals.
 
 ### Notes
 - Build passes after calculator display fix.
+
+## 2026-05-04
+### Task
+Add Tetris game to the workspace.
+
+### Changes
+- Created src/components/TetrisGame/constants.js with grid dimensions, tetromino shapes/colors, and scoring constants.
+- Created src/components/TetrisGame/useTetrisEngine.js React hook implementing full Tetris game logic: board state, piece movement, rotation with wall kicks, collision detection, line clearing, scoring, level progression, ghost piece preview.
+- Created src/components/TetrisGame/Tetris.jsx UI component with canvas rendering of board/pieces/ghost/next-piece preview and touch controls.
+- Registered Tetris in src/config/apps.js with icon 🟦 and window size 520x640.
+- Added .tetris-game styles to src/styles/apps-basic.css.
+
+### Wiki Updates
+- Updated: architecture.md, components.md, changelog.md
+
+### Notes
+- All files stay under 200 lines. Component rendering separated from game logic via hook pattern.

@@ -9,7 +9,8 @@ const APPS = [
   { id: 'geometricdash', name: 'Geometric Dash', icon: '🟩' },
   { id: 'backgrounds', name: 'Backgrounds', icon: '🎨' },
   { id: 'buildercalc', name: 'Builder Calculator', icon: '🔨' },
-  { id: 'skidmark', name: 'Skidmarks', icon: '🏎️' }
+  { id: 'skidmark', name: 'Skidmarks', icon: '🏎️' },
+  { id: 'tetris', name: 'Tetris', icon: '🟦' }
 ]
 
 const Desktop = ({ windows, openApp }) => {

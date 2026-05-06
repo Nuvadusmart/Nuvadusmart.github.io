@@ -28,8 +28,9 @@
 - Skidmark UI shell: src/components/SkidmarkGame/Skidmark.jsx
 - BuilderCalculator logic: src/components/BuilderCalculator/calcPlan.js
 - BuilderCalculator UI split: src/components/BuilderCalculator/BuilderInputs.jsx and src/components/BuilderCalculator/BuilderResults.jsx
-- GeometricDash loop logic: src/components/GeometricDash/useGDGame.js
-- GeometricDash rendering/audio split: src/components/GeometricDash/render.js and src/components/GeometricDash/audio.js
+- Tetris game constants: src/components/TetrisGame/constants.js
+- Tetris game logic hook: src/components/TetrisGame/useTetrisEngine.js
+- Tetris UI component: src/components/TetrisGame/Tetris.jsx
 - Styles split by domain via import hub: src/styles/globals.css
 
 ## Change Log Reference

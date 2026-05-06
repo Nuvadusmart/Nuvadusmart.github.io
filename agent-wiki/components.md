@@ -50,6 +50,21 @@
 	Inputs: canvasRef.
 	Dependencies: constants.js, render.js, audio.js.
 
+- Path: src/components/TetrisGame/constants.js
+	Responsibility: Tetris game constants — grid dimensions, tetromino shapes, colors, scoring points.
+	Inputs: none (pure exports).
+	Dependencies: none.
+
+- Path: src/components/TetrisGame/useTetrisEngine.js
+	Responsibility: Tetris game logic — board state, piece movement, rotation, collision detection, line clearing, scoring, auto-drop loop.
+	Inputs: none (React hook with internal state).
+	Dependencies: constants.js.
+
+- Path: src/components/TetrisGame/Tetris.jsx
+	Responsibility: Tetris UI shell — canvas rendering of board/pieces/ghost/preview, touch controls, game status buttons.
+	Inputs: hook state from useTetrisEngine.
+	Dependencies: useTetrisEngine.js, constants.js.
+
 ## Documentation Template
 For each component include:
 - Path
